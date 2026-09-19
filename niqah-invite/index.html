@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0">
+
+    <title>Royal Invitation</title>
+
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/phase3.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="viewport">
+
+    <div id="app">
+
+        <!-- Envelope Image -->
+
+        <img
+            id="envelope"
+            src="assets/images/base-envelope.png"
+            alt="Envelope">
+
+        <!-- Envelope Opening Video -->
+
+        <video
+            id="openingVideo"
+            playsinline
+            preload="auto">
+
+            <source
+                src="assets/videos/envelope-opening.mp4"
+                type="video/mp4">
+
+        </video>
+
+        <!-- First Paper -->
+        <img
+            id="paperStart"
+            src="assets/images/paper-start.jpg"
+            alt="Invitation Paper">
+
+        <!-- REAL SCROLL SPACE -->
+        <div id="invitationScrollLayer">
+            <div id="scrollContent"></div>
+        </div>
+
+        <!-- Cinematic Fade -->
+        <div id="cinematicFade"></div>
+
+        <!-- Golden Flow Transition -->
+        <div id="goldGlow"></div>
+
+        <!-- Phase 3: Introduction -->
+        <section id="introSection">
+
+            <!-- SALAM -->
+            <div id="salamBlock" class="introBlock">
+
+                <div class="arabicReveal" dir="rtl">السلام عليكم ورحمة الله وبركاته</div>
+
+                <div class="englishReveal">Assalamu Alaikum wa Rahmatullahi wa Barakatuh</div>
+
+                <div class="translationReveal">Peace, Mercy and Blessings of Allah be upon you.</div>
+
+            </div>
+
+
+            <!-- BISMILLAH -->
+            <div id="bismillahBlock" class="introBlock">
+
+                <div class="arabicReveal bismillahArabic" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+
+                <div class="translationReveal bismillahTranslation">In the Name of Allah,<br>The Most Compassionate,<br>The Most Merciful.</div>
+
+            </div>
+
+        </section>
+
+        <!-- CUSTOM SCROLLBAR -->
+
+        <div id="invitationScrollbar">
+
+            <div class="scrollOrnament scrollTop">
+                ✦
+            </div>
+
+            <div class="scrollTrack">
+
+                <div id="scrollThumb">
+
+                    <span class="thumbOrnament">
+                        ✦
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="scrollOrnament scrollBottom">
+                ✦
+            </div>
+
+        </div>
+            
+        <!-- Invisible Seal Button -->
+        <button id="sealButton"></button>
+
+    </div>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+</html>

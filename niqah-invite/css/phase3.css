@@ -1,0 +1,622 @@
+/* =========================================================
+   PHASE 3 — FIXED INVITATION CANVAS
+========================================================= */
+
+#app {
+    position: relative;
+
+    width: 100vw;
+    max-width: 430px;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #000;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   PAPER — NEVER SCROLLS
+========================================================= */
+
+#paperStart {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    transform: none !important;
+
+    filter: brightness(1.02);
+
+}
+
+
+/* =========================================================
+   INVISIBLE SCROLL SENSOR
+========================================================= */
+
+#invitationScrollLayer {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    z-index: 5;
+
+    /*
+       It is visually invisible.
+       It only receives the user's swipe.
+    */
+
+    background: transparent;
+
+    scrollbar-width: none;
+
+    pointer-events: auto;
+}
+
+
+#invitationScrollLayer::-webkit-scrollbar {
+    display: none;
+}
+
+
+/*
+   This creates the scroll distance.
+
+   IMPORTANT:
+   This is NOT the paper.
+*/
+
+#scrollContent {
+
+    width: 1px;
+
+    height: 500vh;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   INTRODUCTION OVERLAY
+========================================================= */
+
+#introSection {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 60;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+}
+
+
+/* =========================================================
+   TEXT BLOCKS
+========================================================= */
+
+#salamBlock,
+#bismillahBlock {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 76%;
+
+    max-width: 340px;
+
+    text-align: center;
+
+    /*
+       CSS handles centering.
+       GSAP will NOT touch x/y for these blocks.
+    */
+
+    transform: translate(-50%, -50%);
+
+    transform-origin: center center;
+
+    will-change: opacity, transform;
+
+}
+
+
+/* =========================================================
+   ARABIC
+========================================================= */
+
+.arabicReveal {
+
+    width: 100%;
+
+    display: block;
+
+    direction: rtl;
+
+    text-align: center;
+
+    font-family: "ArefRuqaa", serif;
+
+    font-size: clamp(
+        1.8rem,
+        7.4vw,
+        2.5rem
+    );
+
+    line-height: 1.65;
+
+    color: #9b701c;
+
+    white-space: normal;
+
+    overflow: hidden;
+
+    /*
+       Rich darker royal gold
+    */
+
+   background:
+    linear-gradient(
+        110deg,
+
+        #5b3d08 0%,
+        #795313 14%,
+        #a87820 28%,
+        #d0a13b 40%,
+        #f5d982 48%,
+        #fff0b5 52%,
+        #d0a13b 60%,
+        #966b1a 76%,
+        #5b3d08 100%
+    );
+
+    background-size: 240% 100%;
+
+    background-position: 50% 50%;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(
+            0 2px 3px
+            rgba(60, 35, 5, .35)
+        );
+
+}
+
+
+/* =========================================================
+   ENGLISH
+========================================================= */
+
+.englishReveal {
+
+    width: 100%;
+
+    display: block;
+
+    margin-top: 20px;
+
+    font-family: "Cormorant", serif;
+
+    font-size: clamp(
+        1.05rem,
+        4.2vw,
+        1.4rem
+    );
+
+    font-weight: 600;
+
+    line-height: 1.45;
+
+    letter-spacing: .055em;
+
+    text-align: center;
+
+    color: #8b6419;
+
+    background:
+        linear-gradient(
+            110deg,
+
+            #5b3d08 0%,
+            #795313 14%,
+            #a87820 28%,
+            #d0a13b 40%,
+            #f5d982 48%,
+            #fff0b5 52%,
+            #d0a13b 60%,
+            #966b1a 76%,
+            #5b3d08 100%
+        );
+
+    background-size: 240% 100%;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(
+            0 2px 3px
+            rgba(60, 35, 5, .3)
+        );
+
+}
+
+
+/* =========================================================
+   TRANSLATION
+========================================================= */
+
+.translationReveal {
+
+    margin-top: 15px;
+
+    font-family: "EBGaramond", serif;
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+
+    color: #725322;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   BISMILLAH
+========================================================= */
+
+.bismillahArabic {
+
+    font-size: clamp(
+        2.15rem,
+        9vw,
+        3.1rem
+    );
+
+    line-height: 1.35;
+
+}
+
+
+.bismillahTranslation {
+
+    margin-top: 22px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+
+}
+
+
+/* =========================================================
+   GOLD DUST
+========================================================= */
+
+.scrollGoldDust {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 80;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+
+.goldDustParticle {
+
+    position: absolute;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff4c4 0%,
+            #e4b84e 35%,
+            #9b6a14 70%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 4px rgba(255, 230, 140, .9),
+        0 0 9px rgba(184, 138, 42, .45);
+
+    will-change:
+        transform,
+        opacity;
+
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+#invitationScrollbar {
+
+    position: absolute;
+
+    /*
+       IMPORTANT:
+       This is INSIDE the paper.
+    */
+
+    right: 8%;
+
+    top: 26%;
+
+    width: 20px;
+
+    height: 51%;
+
+    z-index: 100;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.scrollTrack {
+
+    position: relative;
+
+    width: 3px;
+
+    flex: 1;
+
+    margin: 7px 0;
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(91, 59, 10, .25),
+            rgba(135, 91, 15, .8),
+            rgba(91, 59, 10, .25)
+        );
+
+    box-shadow:
+        0 0 4px
+        rgba(184, 138, 42, .25);
+}
+
+
+#scrollThumb {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 14px;
+
+    height: 38px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #69470c,
+            #c69732,
+            #ffe8a0,
+            #a8751d,
+            #60400a
+        );
+
+    box-shadow:
+        0 0 7px
+        rgba(184, 138, 42, .65),
+
+        inset 0 1px 1px
+        rgba(255, 245, 200, .75);
+
+}
+
+
+.scrollOrnament,
+.thumbOrnament {
+
+    font-family: serif;
+
+    color: #b88627;
+
+    text-shadow:
+        0 0 5px
+        rgba(226, 180, 70, .7);
+
+    font-size: 13px;
+
+}
+
+
+.scrollTop {
+    transform: rotate(45deg);
+}
+
+
+.scrollBottom {
+    transform: rotate(45deg);
+}
+
+/* =========================================================
+   WRITING DUST
+========================================================= */
+
+.writingDust {
+
+    position: absolute;
+
+    display: block;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff9dc 0%,
+            #f7d77d 35%,
+            #b77d19 65%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 5px
+        rgba(255, 222, 130, .95),
+
+        0 0 10px
+        rgba(184, 138, 42, .45);
+
+    z-index: 90;
+
+}
+
+/* =========================================================
+   PHASE 3 — TRUE INVITATION-CENTERED LAYOUT
+   ========================================================= */
+
+#introSection {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#salamBlock,
+#bismillahBlock {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0 10%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    transform-origin: center center;
+}
+
+#salamBlock > *,
+#bismillahBlock > * {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.arabicReveal {
+    width: 100%;
+    text-align: center;
+    direction: rtl;
+    overflow: hidden;
+
+    font-size: clamp(1.65rem, 7vw, 2.25rem);
+    line-height: 1.7;
+}
+
+.englishReveal {
+    width: 100%;
+    text-align: center;
+    direction: ltr;
+    overflow: hidden;
+}
+
+.translationReveal {
+    width: 100%;
+    text-align: center;
+}
+
+.bismillahArabic {
+    width: 100%;
+    text-align: center;
+    direction: rtl;
+
+    font-size: clamp(3rem, 15vw, 5rem);
+    line-height: 1.15;
+}

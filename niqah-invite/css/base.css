@@ -1,0 +1,112 @@
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+} */
+
+/* html,
+body{
+
+    width:100%;
+    height:100%;
+
+    background:#0b0b0b;
+
+    align-items:center;
+
+    font-family:serif;
+} */
+
+/* #viewport{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+
+} */
+
+/* ==========================================
+   MOBILE INVITATION CANVAS
+========================================== */
+
+/* #app{
+
+    position:relative;
+
+    width:100vw;
+
+    max-width:430px;
+
+    aspect-ratio:9/16;
+
+    overflow:hidden;
+
+    background:#000;
+} */
+
+
+html,
+body {
+
+    width: 100%;
+    min-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: #0b0b0b;
+
+    font-family: serif;
+}
+
+
+body {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    overflow-x: hidden;
+}
+
+
+#app {
+    position: relative;
+    width: 100vw;
+    max-width: 430px;
+    min-height: 100vh;
+    height: 100vh;
+
+    /*
+        The paper itself stays visually fixed,
+        but the invitation has scroll space.
+    */
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #000;
+     /*
+        Makes the scroll feel natural on iOS.
+    */
+    -webkit-overflow-scrolling: touch;
+
+    /*
+        Hide scrollbar visually while keeping
+        the page fully scrollable.
+    */
+    scrollbar-width: none;
+}
+
+/* Chrome / Safari / Edge */
+
+#app::-webkit-scrollbar {
+
+    display: none;
+
+}

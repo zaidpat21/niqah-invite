@@ -1,0 +1,50 @@
+/* ==========================================
+   GOLD TEXT SHIMMER
+========================================== */
+
+@keyframes goldShimmer{
+
+    0%{
+
+        background-position:-250% 0;
+
+    }
+
+    100%{
+
+        background-position:250% 0;
+
+    }
+
+}
+
+.goldText{
+
+    background:linear-gradient(
+
+        90deg,
+
+        #7b5a17 0%,
+        #b88a2a 22%,
+        #fff0b8 50%,
+        #b88a2a 78%,
+        #7b5a17 100%
+
+    );
+
+    background-size:250% 100%;
+
+    background-repeat:no-repeat;
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+
+        0 1px 0 rgba(255,248,220,.75),
+        0 0 10px rgba(184,138,42,.10);
+
+}

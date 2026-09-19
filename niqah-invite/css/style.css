@@ -1,0 +1,238 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    background:#0b0b0b;
+
+    /* overflow:hidden;
+
+    display:flex;
+
+    justify-content:center; */
+
+    align-items:center;
+
+    font-family:serif;
+}
+
+#viewport{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+
+}
+
+/* ==========================================
+   MOBILE INVITATION CANVAS
+========================================== */
+
+#app{
+
+    position:relative;
+
+    width:100vw;
+
+    max-width:430px;
+
+    aspect-ratio:9/16;
+
+    overflow:hidden;
+
+    background:#000;
+}
+
+
+/* ==========================================
+   ENVELOPE
+========================================== */
+
+#envelope{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:5;
+
+    transition:opacity .35s ease;
+}
+
+
+/* ==========================================
+   VIDEO
+========================================== */
+
+#openingVideo{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:10;
+
+    transition:opacity .45s ease;
+}
+
+
+/* ==========================================
+   INVITATION PAPER
+========================================== */
+
+#paperStart{
+
+    position:absolute;
+
+    width:86%;
+    /* height:67%; */
+    height:74%;
+
+    /* left:7%; */
+    left:8%;
+    /* top:16.5%; */
+    top:10%;
+
+    object-fit: contain;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:30;
+
+    transform-origin:center center;
+
+    transform:scale(1);
+
+    filter:brightness(.96);
+}
+
+
+/* ==========================================
+   CINEMATIC VIGNETTE
+========================================== */
+
+#cinematicFade{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,0) 40%,
+            rgba(0,0,0,.22) 100%
+        );
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:40;
+}
+
+
+/* ==========================================
+   GOLD SHIMMER
+========================================== */
+
+#goldGlow{
+
+    position:absolute;
+
+    left:-60%;
+
+    top:0;
+
+    width:60%;
+
+    height:100%;
+
+    z-index:50;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    background:linear-gradient(
+
+        115deg,
+
+        transparent 0%,
+
+        rgba(255,245,210,.02) 25%,
+
+        rgba(255,220,140,.55) 48%,
+
+        rgba(255,250,220,.9) 50%,
+
+        rgba(255,220,140,.55) 52%,
+
+        rgba(255,245,210,.02) 75%,
+
+        transparent 100%
+
+    );
+
+    filter:blur(18px);
+
+    transform:skewX(-18deg);
+
+}
+
+
+/* ==========================================
+   SEAL BUTTON
+========================================== */
+
+#sealButton{
+
+    position:absolute;
+
+    width:16%;
+
+    aspect-ratio:1;
+
+    left:43%;
+
+    top:48%;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    z-index:100;
+}

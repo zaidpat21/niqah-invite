@@ -1,0 +1,55 @@
+/* ==============================
+   Aref Ruqaa Ink
+================================ */
+
+@font-face{
+
+    font-family:"ArefRuqaa";
+
+    src:url("../assets/fonts/ArefRuqaaInk-Regular.ttf") format("truetype");
+
+    font-display:swap;
+
+}
+
+/* ==============================
+   Amiri
+================================ */
+
+@font-face{
+
+    font-family:"Amiri";
+
+    src:url("../assets/fonts/AmiriQuran-Regular.ttf") format("truetype");
+
+    font-display:swap;
+
+}
+
+/* ==============================
+   Cormorant Garamond
+================================ */
+
+@font-face{
+
+    font-family:"Cormorant";
+
+    src:url("../assets/fonts/CormorantGaramond-Regular.ttf") format("truetype");
+
+    font-display:swap;
+
+}
+
+/* ==============================
+   EB Garamond
+================================ */
+
+@font-face{
+
+    font-family:"EBGaramond";
+
+    src:url("../assets/fonts/EBGaramond-Regular.ttf") format("truetype");
+
+    font-display:swap;
+
+}
